@@ -1,15 +1,6 @@
-CREATE TABLE equipment (
-    inventory_number VARCHAR(50) PRIMARY KEY,
-    kind VARCHAR(50) NOT NULL,
-    model VARCHAR(100) NOT NULL,
-    room VARCHAR(50), -- NULL indicates the device is in storage
-    purchase_date DATE NOT NULL
-);
-I wrote a single table to explain why it is not a good practice.
-Single-table approach (All-in-one):
 
-Pros: Very simple to write and doesn't require any JOIN operators in queries.
-Cons: Lacks a true relational structure and a FOREIGN KEY. If a room name needs to be updated,
+Single-table approach (All-in-one) is not a good practice because:
+It lacks a true relational structure and a FOREIGN KEY. If a room name needs to be updated,
 you would have to manually update it across multiple equipment records instead of a single place.
 
 
